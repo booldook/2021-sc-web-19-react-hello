@@ -1,0 +1,11 @@
+[
+	{ "id": 1, "cate": "01", "title": "놀라운 이벤트1", "src": "evt01.jpg", "price": "15.00" },
+	{ "id": 2, "cate": "01", "title": "놀라운 이벤트2", "src": "evt02.jpg", "price": "125.00" },
+	{ "id": 3, "cate": "01", "title": "놀라운 이벤트3", "src": "evt03.jpg", "price": "215.00" },
+	{ "id": 4, "cate": "02", "title": "좋은 이벤트1", "src": "evt04.jpg", "price": "99.99" },
+	{ "id": 5, "cate": "02", "title": "좋은 이벤트2", "src": "evt05.jpg", "price": "45.00" },
+	{ "id": 6, "cate": "02", "title": "좋은 이벤트3", "src": "evt06.jpg", "price": "29.99" },
+	{ "id": 7, "cate": "03", "title": "질 좋은 이벤트1", "src": "evt07.jpg", "price": "35.00" },
+	{ "id": 8, "cate": "03", "title": "질 좋은 이벤트2", "src": "evt08.jpg", "price": "350.00" },
+	{ "id": 9, "cate": "03", "title": "질 좋은 이벤트2", "src": "evt09.jpg", "price": "350.00" }
+]
