@@ -1,0 +1,2 @@
+.form-search {position: relative;}
+.form-search .bt-close {position: absolute; right: .5em; top: 50%; transform: translateY(-50%); cursor: pointer;}
