@@ -1,2 +1,20 @@
 .form-search {position: relative;}
 .form-search .bt-close {position: absolute; right: .5em; top: 50%; transform: translateY(-50%); cursor: pointer;}
+
+.list-wrapper {display: flex; flex-wrap: wrap; margin: 1.5em 0;}
+.list-wrap {width: 23%; margin: 1%; border: 1px solid #ddd; border-radius: 6px; overflow: hidden;}
+.list-wrap > .content-wrap {padding: 1em; background-color: #f1f1f1;}
+.list-wrap > .content-wrap > .title {font-size: 1.5em; padding-bottom: .5em; margin-bottom: 0.5em; border-bottom: 1px solid #ddd;}
+.list-wrap > .content-wrap > .price {font-size: 1.25em; color: #555; text-align: right;}
+
+@media screen and (max-width: 991px) {
+	.list-wrap {width: 31.3333%;}
+}
+
+@media screen and (max-width: 767px) {
+	.list-wrap {width: 48%;}
+}
+
+@media screen and (max-width: 575px) {
+	.list-wrap {width: 98%;}
+}

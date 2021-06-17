@@ -32,6 +32,7 @@ class Search extends Component {
 		this.setState({
 			query: e.target.value
 		})
+		this.props.onChange(e.target.value)
 	}
 
 	render() {
@@ -55,21 +56,72 @@ class Search extends Component {
 	}
 }
 
+class Lists extends Component {
+	render() {
+		return (
+			<ul className="list-wrapper">
+				{
+					this.props.evt.map( v => <List key={ uuidv4() } v={ v } />)
+				}
+			</ul>
+		);
+	}
+}
+
+class List extends Component {
+	render() {
+		const { src, title, price } = this.props.v
+		return (
+			<li className="list-wrap">
+				<div className="img-wrap">
+					<img src={ "../img/" + src } alt={ title } className="w-100" />
+				</div>
+				<div className="content-wrap">
+					<h2 className="title">{ title }</h2>
+					<h3 className="price">${ price }</h3>
+				</div>
+			</li>
+		);
+	}
+}
+
 class App extends Component {
 	state = {
-
+		evt: [],
+		searchEvt: []
 	}
-	
+
 	title = {
 		headTitle: 'React를 배워봅시다.',
 		subTitle: 'Component 배우기'
+	}
+
+	async componentDidMount() {
+		try {
+			const { data } = await axios('../json/product.json') 
+			this.setState({
+				evt: [...data],
+				searchEvt: [...data]
+			})
+		}
+		catch(err) {
+			console.log(err)
+		}
+	}
+
+	onChange = query => {
+		this.setState({
+			...this.state,
+			searchEvt: this.state.evt.filter( v => v.title.includes(query) )
+		})
 	}
 	
 	render() {
 		return (
 			<div className="container">
 				<Title title={ this.title }/>
-				<Search />
+				<Search onChange={ this.onChange } />
+				<Lists evt={ this.state.searchEvt } />
 			</div>
 		)
 	}
